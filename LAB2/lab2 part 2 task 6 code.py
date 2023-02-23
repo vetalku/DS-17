@@ -41,12 +41,9 @@ def list_friq(list_n):
     return dict(sorted(di.items(), key = lambda x:x[1],reverse=True))
 
 
-def list_std(list_n):
+def list_std (list_n):
     list_avg_n = list_avg(list_n)
-    sum_tmp = 0
-    for i in list_n:
-        sum_tmp+=pow((i-list_avg_n),2)
-    return sqrt((sum_tmp/len(list_n)))
+    return sqrt((sum([pow((i-list_avg_n),2) for i in list_n])/len(list_n)))
 
 #print(list_with_random_numbers)
 print(f" мінімальне та максимальне значення - {list_min(list_with_random_numbers)} , {list_max(list_with_random_numbers)} ") 
